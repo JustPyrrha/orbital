@@ -1,0 +1,13 @@
+{
+	"schemaVersion": 1,
+	"id": "orbital",
+	"version": "0.1.0",
+	"entrypoints": {
+		"main": [
+			{
+				"adapter": "kotlin",
+				"value": "gay.pyrrha.orbital.fabric.OrbitalFabric"
+			}
+		]
+	}
+}
