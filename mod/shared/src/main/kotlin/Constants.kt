@@ -9,5 +9,7 @@ import net.minecraft.resources.Identifier
 
 public const val MOD_ID: String = "orbital"
 internal const val TAG: String = "(Orbital)"
+internal const val TAG_CLIENT: String = "(Orbital|Client)"
+internal const val TAG_SERVER: String = "(Orbital|Server)"
 
 public fun id(path: String): Identifier = Identifier.fromNamespaceAndPath(MOD_ID, path)
