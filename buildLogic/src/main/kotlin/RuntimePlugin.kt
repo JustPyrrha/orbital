@@ -3,6 +3,8 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
+import gay.pyrrha.orbital.build.findPluginId
+import gay.pyrrha.orbital.build.libs
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.attributes.Attribute
@@ -17,7 +19,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinJvmCompile
 class RuntimePlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
-            pluginManager.apply("gay.pyrrha.orbital.shared")
+            pluginManager.apply(libs.findPluginId("orbital.shared"))
 
             val commonKotlin =
                 configurations.create("commonKotlin") {

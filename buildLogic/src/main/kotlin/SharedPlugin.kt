@@ -3,6 +3,8 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at https://mozilla.org/MPL/2.0/.
  */
+import gay.pyrrha.orbital.build.findPluginId
+import gay.pyrrha.orbital.build.libs
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.plugins.BasePluginExtension
@@ -16,7 +18,7 @@ import org.jetbrains.kotlin.gradle.dsl.KotlinJvmProjectExtension
 class SharedPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
-            pluginManager.apply("org.jetbrains.kotlin.jvm")
+            pluginManager.apply(libs.findPluginId("kotlin"))
 
             extensions.configure<BasePluginExtension> {
                 archivesName = "${rootProject.name}-${project.name}"
