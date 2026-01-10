@@ -25,5 +25,14 @@
 	"depends": {
 		"minecraft": ">=26.1-alpha.2",
 		"fabric-language-kotlin": ">=1.13.8+kotlin.2.3.0"
+	},
+	"custom": {
+		"modmenu": {
+			"links": {
+				"modmenu.discord": "https://discord.gg/puQWyMtAKA",
+				"modmenu.kofi": "https://ko-fi.com/pyrrha",
+				"modmenu.modrinth": "https://modrinth.com/mod/orbital"
+			}
+		}
 	}
 }

@@ -9,11 +9,16 @@ plugins {
     alias(libs.plugins.orbital.koin)
     alias(libs.plugins.orbital.runtime)
 }
+repositories {
+    maven("https://maven.terraformersmc.com/") { name = "Terraformers" }
+}
 
 dependencies {
     minecraft(libs.minecraft)
     implementation(libs.fabric.kotlin)
     implementation(libs.fabric.loader)
+
+    implementation(libs.modmenu)
 
     implementation(libs.kotlin.logging)
     include(libs.kotlin.logging)
