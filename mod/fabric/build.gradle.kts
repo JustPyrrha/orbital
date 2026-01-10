@@ -6,6 +6,7 @@
 plugins {
     alias(libs.plugins.kotlin)
     alias(libs.plugins.loom)
+    alias(libs.plugins.orbital.koin)
     alias(libs.plugins.orbital.runtime)
 }
 
@@ -16,6 +17,9 @@ dependencies {
 
     implementation(libs.kotlin.logging)
     include(libs.kotlin.logging)
+
+    include(libs.koin.annotations)
+    include(libs.koin.core)
 }
 
 loom {
@@ -34,6 +38,14 @@ loom {
     }
 }
 
+sourceSets {
+    main {
+        kotlin {
+            srcDir("build/generated/ksp/main")
+        }
+    }
+}
+
 val loaderAttr: Attribute<String> = Attribute.of("io.github.mcgradleconventions.loader", String::class.java)
 listOf(
     "apiElements",
@@ -42,7 +54,7 @@ listOf(
 ).forEach { variant ->
     configurations.named(variant) {
         attributes {
-            attribute(loaderAttr, "common")
+            attribute(loaderAttr, "fabric")
         }
     }
 }
@@ -54,7 +66,7 @@ sourceSets.configureEach {
     ).forEach { variant ->
         configurations.named(variant) {
             attributes {
-                attribute(loaderAttr, "common")
+                attribute(loaderAttr, "fabric")
             }
         }
     }

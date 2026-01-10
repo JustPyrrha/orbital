@@ -6,6 +6,7 @@
 plugins {
     alias(libs.plugins.kotlin)
     alias(libs.plugins.loom)
+    alias(libs.plugins.orbital.koin)
     alias(libs.plugins.orbital.shared)
 }
 
@@ -21,6 +22,14 @@ configurations {
     val commonResources by creating {
         isCanBeResolved = false
         isCanBeConsumed = true
+    }
+}
+
+sourceSets {
+    main {
+        kotlin {
+            srcDir("build/generated/ksp/main")
+        }
     }
 }
 

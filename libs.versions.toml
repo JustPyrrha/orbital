@@ -3,6 +3,10 @@ fabricApi = "0.141.2+26.1" # https://fabricmc.net/develop/
 fabricKotlin = "1.13.8+kotlin.2.3.0" # https://github.com/FabricMC/fabric-language-kotlin/releases
 fabricLoader = "0.18.4" # https://fabricmc.net/develop/
 fabricLoom = "1.14-SNAPSHOT" # https://fabricmc.net/develop/
+koinAnnotations = "2.3.1" # https://mvnrepository.com/artifact/io.insert-koin/koin-annotations
+koinCore = "4.1.1" # https://mvnrepository.com/artifact/io.insert-koin/koin-core
+koinKsp = "2.3.1" # https://mvnrepository.com/artifact/io.insert-koin/koin-ksp-compiler
+ksp = "2.3.4" # https://github.com/google/ksp/releases
 kotlin = "2.3.0"
 kotlinLogging = "7.0.14" # https://github.com/oshai/kotlin-logging/releases
 minecraft = "26.1-snapshot-2"
@@ -14,17 +18,23 @@ neoForm = "26.1-snapshot-2-1" # https://projects.neoforged.net/neoforged/neoform
 fabric-api = { group = "net.fabricmc.fabric-api", name = "fabric-api", version.ref = "fabricApi" }
 fabric-kotlin = { group = "net.fabricmc", name = "fabric-language-kotlin", version.ref = "fabricKotlin" }
 fabric-loader = { group = "net.fabricmc", name = "fabric-loader", version.ref = "fabricLoader" }
+koin-annotations = { group = "io.insert-koin", name = "koin-annotations", version.ref = "koinAnnotations" }
+koin-core = { group = "io.insert-koin", name = "koin-core", version.ref = "koinCore" }
+koin-ksp = { group = "io.insert-koin", name = "koin-ksp-compiler", version.ref = "koinKsp" }
 kotlin-logging = { group = "io.github.oshai", name = "kotlin-logging-jvm", version.ref = "kotlinLogging" }
 minecraft = { group = "com.mojang", name = "minecraft", version.ref = "minecraft" }
 
+ksp-gradlePlugin = { group = "com.google.devtools.ksp", name = "com.google.devtools.ksp.gradle.plugin", version.ref = "ksp" }
 kotlin-gradlePlugin = { group = "org.jetbrains.kotlin.jvm", name = "org.jetbrains.kotlin.jvm.gradle.plugin", version.ref = "kotlin" }
 neoForge-modDevGradlePlugin = { group = "net.neoforged.moddev", name = "net.neoforged.moddev.gradle.plugin", version.ref = "neoForgeGradle" }
 fabric-loomGradlePlugin = { group = "net.fabricmc.fabric-loom", name = "net.fabricmc.fabric-loom.gradle.plugin", version.ref = "fabricLoom" }
 
 [plugins]
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 kotlin = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 neoGradle = { id = "net.neoforged.moddev", version.ref = "neoForgeGradle" }
 loom = { id = "net.fabricmc.fabric-loom", version.ref = "fabricLoom" }
 
+orbital-koin = { id = "gay.pyrrha.orbital.koin" }
 orbital-runtime = { id = "gay.pyrrha.orbital.runtime" }
 orbital-shared = { id = "gay.pyrrha.orbital.shared" }

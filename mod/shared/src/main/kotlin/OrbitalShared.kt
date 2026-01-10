@@ -5,13 +5,15 @@
  */
 package gay.pyrrha.orbital
 
+import gay.pyrrha.orbital.di.service.PlatformService
 import io.github.oshai.kotlinlogging.KLogger
 import io.github.oshai.kotlinlogging.KotlinLogging
 
 internal val logger: KLogger = KotlinLogging.logger {}
 
-public object OrbitalShared {
+public class OrbitalShared(private val platform: PlatformService) {
     public fun init() {
         logger.info { "$TAG Trans Rights are Human Rights!" }
+        logger.info { "$TAG Detected ${platform.platformKey}." }
     }
 }

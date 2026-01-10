@@ -14,6 +14,7 @@ repositories {
 }
 
 dependencies {
+    compileOnly(libs.ksp.gradlePlugin)
     compileOnly(libs.kotlin.gradlePlugin)
     compileOnly(libs.neoForge.modDevGradlePlugin)
     compileOnly(libs.fabric.loomGradlePlugin)
@@ -21,6 +22,10 @@ dependencies {
 
 gradlePlugin {
     plugins {
+        val koinPlugin by creating {
+            id = "gay.pyrrha.orbital.koin"
+            implementationClass = "KoinPlugin"
+        }
         val runtimePlugin by creating {
             id = "gay.pyrrha.orbital.runtime"
             implementationClass = "RuntimePlugin"

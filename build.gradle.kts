@@ -5,13 +5,19 @@
  */
 
 plugins {
+    alias(libs.plugins.ksp) apply false
     alias(libs.plugins.kotlin) apply false
     alias(libs.plugins.neoGradle) apply false
     alias(libs.plugins.loom) apply false
 
+    alias(libs.plugins.orbital.koin) apply false
     alias(libs.plugins.orbital.runtime) apply false
     alias(libs.plugins.orbital.shared) apply false
 }
 
 group = "gay.pyrrha"
 version = "0.1.0"
+
+repositories {
+    mavenCentral()
+}
