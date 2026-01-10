@@ -5,7 +5,11 @@
  */
 package gay.pyrrha.orbital.fabric.di
 
-import org.koin.core.annotation.KoinApplication
+import org.koin.core.annotation.ComponentScan
+import org.koin.core.annotation.Configuration
+import org.koin.core.annotation.Module
 
-@KoinApplication
-public object FabricKoinApplication
+@Module
+@ComponentScan("gay.pyrrha.orbital")
+@Configuration
+public class OrbitalModule

@@ -6,7 +6,7 @@
 package gay.pyrrha.orbital.fabric
 
 import gay.pyrrha.orbital.OrbitalShared
-import gay.pyrrha.orbital.fabric.di.FabricKoinApplication
+import gay.pyrrha.orbital.fabric.di.OrbitalKoin
 import io.github.oshai.kotlinlogging.KLogger
 import io.github.oshai.kotlinlogging.KotlinLogging
 import net.fabricmc.api.ModInitializer
@@ -19,7 +19,7 @@ public object OrbitalFabric : ModInitializer {
     override fun onInitialize() {
         logger.info { "$TAG Starting..." }
 
-        FabricKoinApplication.startKoin()
+        OrbitalKoin.startKoin()
         KoinPlatform.getKoin().get<OrbitalShared>().init()
     }
 }
