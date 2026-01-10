@@ -7,7 +7,9 @@ package gay.pyrrha.orbital.fabric.di.service
 
 import gay.pyrrha.orbital.di.service.PlatformService
 import net.fabricmc.loader.api.FabricLoader
+import org.koin.core.annotation.Single
 
+@Single
 public class FabricPlatformService : PlatformService {
     override val platformKey: String
         get() = "Fabric"

@@ -8,9 +8,11 @@ package gay.pyrrha.orbital
 import gay.pyrrha.orbital.di.service.PlatformService
 import io.github.oshai.kotlinlogging.KLogger
 import io.github.oshai.kotlinlogging.KotlinLogging
+import org.koin.core.annotation.Single
 
 internal val logger: KLogger = KotlinLogging.logger {}
 
+@Single
 public class OrbitalShared(
     private val platform: PlatformService,
 ) {

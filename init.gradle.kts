@@ -31,12 +31,17 @@ fun applySpotless(project: org.gradle.api.Project) {
     project.apply<com.diffplug.gradle.spotless.SpotlessPlugin>()
     project.extensions.configure<com.diffplug.gradle.spotless.SpotlessExtension> {
         val spotlessTemplatesDir = rootProject.file(if (rootProject.name == "buildLogic") { "../spotless" } else { "spotless" })
+
+        ratchetFrom("origin/main")
+
         kotlin {
             ktlint()
+            targetExclude("**/build/generated/**/*.kt")
             licenseHeaderFile("$spotlessTemplatesDir/license.kt", "(^(?![\\/ ]\\*).*$)")
         }
         kotlinGradle {
             ktlint()
+            targetExclude("**/build/generated/**/*.kt")
             licenseHeaderFile("$spotlessTemplatesDir/license.kt", "(^(?![\\/ ]\\*).*$)")
         }
 
