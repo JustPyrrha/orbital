@@ -11,7 +11,9 @@ import io.github.oshai.kotlinlogging.KotlinLogging
 
 internal val logger: KLogger = KotlinLogging.logger {}
 
-public class OrbitalShared(private val platform: PlatformService) {
+public class OrbitalShared(
+    private val platform: PlatformService,
+) {
     public fun init() {
         logger.info { "$TAG Trans Rights are Human Rights!" }
         logger.info { "$TAG Detected ${platform.platformKey}." }
