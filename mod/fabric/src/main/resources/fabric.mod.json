@@ -7,9 +7,7 @@
 	"description": "Yet another space mod.",
 	"license": "MPL-2.0",
 	"icon": "assets/orbital/icon.png",
-	"authors": [
-		"Pyrrha"
-	],
+	"authors": ["Pyrrha"],
 	"contact": {
 		"sources": "https://git.pyrrha.gay/py/orbital",
 		"issues": "https://github.com/JustPyrrha/orbital/issues"
